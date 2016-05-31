@@ -63,3 +63,11 @@ rake db:create
 - heroku run rake db:seed
 
 *heroku ready*
+
+- bundle
+
+*resque working*
+
+- bundle
+
+*code highlights using coderay*

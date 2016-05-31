@@ -43,7 +43,9 @@ gem 'ms-dropdown-rails'
 gem 'sweetalert-rails'
 # https://github.com/mois3x/sweet-alert-rails-confirm
 gem 'sweet-alert-confirm'
-
+# https://github.com/rubychan/coderay
+gem 'coderay'
+# https://github.com/resque/resque
 gem 'resque'
 
 group :development, :test do
