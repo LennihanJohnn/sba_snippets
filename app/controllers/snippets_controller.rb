@@ -5,7 +5,11 @@ class SnippetsController < ApplicationController
   # GET /snippets
   # GET /snippets.json
   def index
-    @snippets = Snippet.latest
+    if params[:query].present?
+      @snippets = Snippet.search(params[:query]).records.latest
+    else
+      @snippets = Snippet.latest
+    end
   end
 
   # GET /snippets/1

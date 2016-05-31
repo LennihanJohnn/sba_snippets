@@ -47,6 +47,8 @@ gem 'sweet-alert-confirm'
 gem 'coderay'
 # https://github.com/resque/resque
 gem 'resque'
+# https://github.com/ankane/searchkick
+gem 'searchkick'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
