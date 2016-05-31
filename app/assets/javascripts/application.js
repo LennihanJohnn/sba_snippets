@@ -17,6 +17,7 @@
 //= require jquery.dd.min
 //= require sweetalert
 //= require sweet-alert-confirm
+//= require twitter/typeahead.min
 //= require_tree .
 
 $(document).on('keyup', 'input', function(e){

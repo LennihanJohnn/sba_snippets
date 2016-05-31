@@ -71,3 +71,12 @@ rake db:create
 - bundle
 
 *code highlights using coderay*
+
+- bundle
+- rake searchkick:reindex CLASS=Snippet
+
+*searching working*
+
+- bundle
+
+*typeahead working*

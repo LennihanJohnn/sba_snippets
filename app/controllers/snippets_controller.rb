@@ -7,8 +7,16 @@ class SnippetsController < ApplicationController
   def index
     if params[:query].present?
       @snippets = Snippet.search(params[:query]).records.latest
+      @autocomplete = @snippets.map do |snippet|
+        { title: "#{snippet.title} - #{snippet.language_name.downcase}", value: snippet.id }
+      end
     else
       @snippets = Snippet.latest
+    end
+    respond_to do |format|
+      format.json { render json: @autocomplete }
+      format.html
+      format.js
     end
   end
 
