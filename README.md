@@ -101,3 +101,8 @@ rake db:create
 - rake assets:precompile
 
 *precompiled assets added*
+
+- heroku config:set SENDGRID_USERNAME=username
+- heroku config:set SENDGRID_PASSWORD=password
+
+*sendgrid working*
