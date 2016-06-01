@@ -90,5 +90,10 @@ rake db:create
 - heroku addons:create bonsai
 - heroku config:set ELASTICSEARCH_URL=\`heroku config:get BONSAI_URL\`
 - git push heroku master
+- heroku run rails c
+- Snippet.import force: true
+- Snippet.reindex
 
 *bonsai-elastic ready*
+
+*anywhere searching*

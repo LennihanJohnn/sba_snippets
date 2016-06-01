@@ -8,7 +8,7 @@ class SnippetsController < ApplicationController
     if params[:query].present?
       @snippets = Snippet.search(params[:query]).records.latest
       @autocomplete = @snippets.map do |snippet|
-        { title: "#{snippet.title} - #{snippet.language_name.downcase}", value: snippet.id }
+        { title: snippet.title, value: snippet.id }
       end
     else
       @snippets = Snippet.latest
