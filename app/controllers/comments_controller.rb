@@ -11,7 +11,7 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
-        CommentsMailer.create(@comment).deliver_now!
+        Resque.enqueue(CommentsMailerWorker, @comment.id)
         format.html { redirect_to @comment.snippet, notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
       else
