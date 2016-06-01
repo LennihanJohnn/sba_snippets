@@ -1,27 +1,7 @@
 class CommentsController < ApplicationController
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:create, :destroy]
   before_action :set_snippet
-  before_action :set_comment, only: [:show, :edit, :update, :destroy]
-
-  # GET /snippets/1/comments
-  # GET snippets/1/comments.json
-  def index
-    @comments = @snippet.comments
-  end
-
-  # GET /snippets/1/comments/1
-  # GET /snippets/1/comments/1.json
-  def show
-  end
-
-  # GET /snippets/1/comments/new
-  def new
-    @comment = @snippet.comments.build
-  end
-
-  # GET /snippets/1/comments/1/edit
-  def edit
-  end
+  before_action :set_comment, only: [:destroy]
 
   # POST /snippets/1/comments
   # POST /snippets/1/comments.json
@@ -31,22 +11,9 @@ class CommentsController < ApplicationController
 
     respond_to do |format|
       if @comment.save
+        CommentsMailer.create(@comment).deliver_now!
         format.html { redirect_to @comment.snippet, notice: 'Comment was successfully created.' }
         format.json { render :show, status: :created, location: @comment }
-      else
-        format.html { render @comment.snippet }
-        format.json { render json: @comment.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PATCH/PUT /snippets/1/comments/1
-  # PATCH/PUT /snippets/1/comments/1.json
-  def update
-    respond_to do |format|
-      if @comment.update(comment_params)
-        format.html { redirect_to @comment.snippet, notice: 'Comment was successfully updated.' }
-        format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render @comment.snippet }
         format.json { render json: @comment.errors, status: :unprocessable_entity }

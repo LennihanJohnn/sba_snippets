@@ -80,3 +80,8 @@ rake db:create
 - bundle
 
 *typeahead working*
+
+- rails g mailer CommentsMailer create
+- bundle
+
+*mailing working*
