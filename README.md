@@ -97,3 +97,7 @@ rake db:create
 *bonsai-elastic ready*
 
 *anywhere searching*
+
+- rake assets:precompile
+
+*precompiled assets added*
