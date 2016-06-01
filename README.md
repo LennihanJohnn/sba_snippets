@@ -85,3 +85,10 @@ rake db:create
 - bundle
 
 *mailing working*
+
+- bundle
+- heroku addons:create bonsai
+- heroku config:set ELASTICSEARCH_URL=\`heroku config:get BONSAI_URL\`
+- git push heroku master
+
+*bonsai-elastic ready*

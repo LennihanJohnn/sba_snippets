@@ -52,6 +52,13 @@ gem 'searchkick'
 # https://github.com/yourabi/twitter-typeahead-rails
 gem 'twitter-typeahead-rails'
 
+# https://github.com/ankane/searchkick#deployment
+# https://docs.bonsai.io/docs/using-the-elasticsearch-rails-client
+# https://github.com/elastic/elasticsearch-rails/blob/master/README.md
+gem 'elasticsearch-model'
+gem 'elasticsearch-rails'
+gem 'bonsai-elasticsearch-rails'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'

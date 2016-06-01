@@ -1,4 +1,6 @@
 class Snippet < ActiveRecord::Base
+  include Elasticsearch::Model
+  include Elasticsearch::Model::Callbacks
 
   searchkick
 

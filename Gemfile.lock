@@ -42,6 +42,7 @@ GEM
     bcrypt (3.1.11)
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
+    bonsai-elasticsearch-rails (0.0.4)
     bootstrap-sass (3.3.6)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
@@ -69,6 +70,11 @@ GEM
       elasticsearch-transport (= 1.0.17)
     elasticsearch-api (1.0.17)
       multi_json
+    elasticsearch-model (0.1.9)
+      activesupport (> 3)
+      elasticsearch (> 0.4)
+      hashie
+    elasticsearch-rails (0.1.9)
     elasticsearch-transport (1.0.17)
       faraday
       multi_json
@@ -230,11 +236,14 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bonsai-elasticsearch-rails
   bootstrap-sass
   byebug
   coderay
   coffee-rails (~> 4.1.0)
   devise
+  elasticsearch-model
+  elasticsearch-rails
   font-awesome-sass
   jbuilder (~> 2.0)
   jquery-rails
