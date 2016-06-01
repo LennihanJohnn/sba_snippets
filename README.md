@@ -106,3 +106,9 @@ rake db:create
 - heroku config:set SENDGRID_PASSWORD=password
 
 *sendgrid working*
+
+- heroku ps:scale worker start
+- heroku addons:create heroku-redis
+- echo "worker: env QUEUE=* bundle exec rake resque:work" > Procfile
+
+*heroku-redis ready*
