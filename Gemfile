@@ -50,8 +50,7 @@ gem 'resque'
 # https://github.com/ankane/searchkick
 gem 'searchkick'
 # https://github.com/yourabi/twitter-typeahead-rails
-gem 'twitter-typeahead-rails'
-
+gem 'twitter-typeahead-rails', git: 'https://github.com/frank184/twitter-typeahead-rails.git'
 # https://github.com/ankane/searchkick#deployment
 # https://docs.bonsai.io/docs/using-the-elasticsearch-rails-client
 # https://github.com/elastic/elasticsearch-rails/blob/master/README.md
